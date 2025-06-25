@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MeowDev - Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: radial-gradient(circle at top, #6e35b4, #3d1073);
+      color: white;
+      padding: 20px;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      padding: 20px 30px;
+      border-radius: 20px;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    header h1 {
+      font-size: 2em;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      color: #ffccff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+
+    .profile-container {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(6px);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .profile-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #ffccff;
+      margin-bottom: 15px;
+    }
+
+    .profile-header h2 {
+      font-size: 1.8em;
+    }
+
+    .bio {
+      font-size: 0.95em;
+      color: #ddd;
+      margin-top: 10px;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 30px;
+      gap: 20px;
+    }
+
+    .stat-box {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      flex: 1;
+    }
+
+    .stat-box h3 {
+      font-size: 1.4em;
+    }
+
+    .stat-box p {
+      font-size: 0.9em;
+      color: #ccc;
+    }
+
+    @media (max-width: 600px) {
+      .stats {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1> Profile</h1>
+    <nav>
+      <a href="Halaman-utama.html">Home</a>
+      <a href="Topics.html">Topics</a>
+      <a href="tags.html">Tags</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </header>
+
+  <section class="profile-container">
+    <div class="profile-header">
+      <img class="profile-pic" src="owner (2).jpg" alt="Profile Picture">
+      <h2>@meowdev</h2>
+      <p class="bio">Frontend & Cybersecurity enthusiast 🛡️ | Suka ngoding sambil ngopi ☕</p>
+    </div>
+
+    <div class="stats">
+      <div class="stat-box">
+        <h3>42</h3>
+        <p>Posts</p>
+      </div>
+      <div class="stat-box">
+        <h3>128</h3>
+        <p>Likes</p>
+      </div>
+      <div class="stat-box">
+        <h3>17</h3>
+        <p>Tags Followed</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

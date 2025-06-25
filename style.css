@@ -1,0 +1,182 @@
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', sans-serif;
+  background: linear-gradient(135deg, #3c166b, #5e2d91);
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1000px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.text-content {
+  flex: 1;
+  padding-right: 30px;
+}
+
+.image-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cat-img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  animation: float 4s ease-in-out infinite;
+}
+
+h1 {
+  font-size: 3em;
+  margin: 0 0 20px;
+}
+
+.currently {
+  font-weight: normal;
+  font-size: 0.6em;
+  vertical-align: middle;
+}
+
+.offline {
+  font-weight: bold;
+  font-size: 1.2em;
+  display: block;
+}
+
+.stay-text {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  color: #fff;
+  margin-right: 15px;
+  font-size: 1.5em;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.top-buttons {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+
+.top-buttons .btn {
+  margin-left: 10px;
+  padding: 8px 16px;
+  background-color: #ff6b81;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.learn-more {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4a90e2;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.learn-more:hover {
+  background-color: #357ABD;
+}
+
+
+.social-icons a:hover {
+  color: #ffb6c1;
+}
+
+/* Header container untuk tombol */
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: flex-end;
+  background: transparent;
+  z-index: 1000;
+}
+
+/* Tombol login dan register */
+.top-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.top-buttons .btn {
+  padding: 8px 16px;
+  background-color: #ff6b81;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.top-buttons .btn:hover {
+  background-color: #e2546c;
+}
+
+/* Tambahkan margin atas pada container utama agar tidak ketutup header */
+.container {
+  margin-top: 80px; /* Supaya konten tidak ketimpa header */
+}
+
+/* Responsive mobile */
+@media (max-width: 480px) {
+  .top-buttons .btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .header {
+    padding: 10px 15px;
+  }
+}
+
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-content {
+    padding: 0;
+  }
+
+  .cat-img {
+    max-width: 300px;
+    margin-top: 20px;
+  }
+}

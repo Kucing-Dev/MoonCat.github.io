@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoonCat</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: radial-gradient(circle at top, #6e35b4, #3d1073);
+      color: white;
+      padding: 20px;
+    }
+
+    header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      padding: 20px 30px;
+      border-radius: 20px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    header h1 {
+      font-size: 2em;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    nav a {
+      color: #ffccff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+
+    .main-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .sidebar, .feed {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .sidebar {
+      flex: 1;
+      min-width: 200px;
+      max-width: 250px;
+      transition: max-height 0.4s ease;
+      overflow: hidden;
+      max-height: 60px;
+    }
+
+    .sidebar.collapsed {
+      max-height: 60px;
+    }
+
+    .sidebar.expanded {
+      max-height: 500px;
+    }
+
+    .toggle-btn {
+      background: none;
+      border: none;
+      color: #ffccff;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 10px;
+      font-size: 1em;
+    }
+
+    .feed {
+      flex: 3;
+      min-width: 300px;
+    }
+
+    .category, .post-card {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 14px 18px;
+      margin-bottom: 15px;
+      border-radius: 15px;
+      transition: background 0.3s, transform 0.3s;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .category:hover, .post-card:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: scale(1.02);
+    }
+
+    .post-card h3 {
+      font-size: 1.2em;
+      margin-bottom: 6px;
+    }
+
+    .post-card p {
+      font-size: 0.95em;
+      color: #ddd;
+    }
+
+    .post-card .author {
+      font-size: 0.8em;
+      color: #aaa;
+      margin-top: 5px;
+      display: block;
+    }
+
+    .search-bar {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .search-bar input {
+      flex: 1;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      font-size: 1em;
+    }
+
+    .search-bar button {
+      padding: 12px 16px;
+      background-color: #ffccff;
+      color: #3d1073;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .search-bar button:hover {
+      background-color: #ffc0ff;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .main-content {
+        flex-direction: column;
+      }
+
+      .sidebar, .feed {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      nav {
+        justify-content: center;
+        margin-top: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.6em;
+      }
+
+      .post-card h3 {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MoonCat</h1>
+    <nav>
+      <a href="Halaman-utama.html">Home</a>
+      <a href="Topics.html">Topics</a>
+      <a href="tags.html">Tags</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </header>
+  
+
+  <div class="main-content">
+    <aside class="sidebar collapsed" id="sidebar">
+      <button class="toggle-btn" onclick="toggleSidebar()">📂 Toggle Kategori</button>
+      <div class="category">#Frontend</div>
+      <div class="category">#Backend</div>
+      <div class="category">#UIUX</div>
+      <div class="category">#GameDev</div>
+      <div class="category">#Python</div>
+    </aside>
+
+    <section class="feed">
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder=" Cari postingan...">
+        <button onclick="searchPosts()">Cari</button>
+      </div>
+
+      <div class="post-card">
+        <h3>✨ Cara membuat dark mode toggle dengan JavaScript</h3>
+        <p>#frontend #javascript</p>
+        <span class="author">@softkitty</span>
+      </div>
+
+      <div class="post-card">
+        <h3>🐍 Tips belajar Python untuk pemula yang santai</h3>
+        <p>#python #beginner</p>
+        <span class="author">@meowdev</span>
+      </div>
+
+      <div class="post-card">
+        <h3>🎮 Gimana cara bikin game 2D sederhana pakai canvas?</h3>
+        <p>#gamedev #htmlcanvas</p>
+        <span class="author">@gamerkitty</span>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    function searchPosts() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      const posts = document.querySelectorAll('.post-card');
+
+      posts.forEach(post => {
+        const content = post.innerText.toLowerCase();
+        if (content.includes(query)) {
+          post.style.display = 'block';
+        } else {
+          post.style.display = 'none';
+        }
+      });
+    }
+
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('expanded');
+      sidebar.classList.toggle('collapsed');
+    }
+  </script>
+</body>
+</html>
+
+
+
+

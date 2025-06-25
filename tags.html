@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MoonCat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: radial-gradient(circle at top, #6e35b4, #3d1073);
+      color: #fff;
+      padding: 20px;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      padding: 20px 30px;
+      border-radius: 20px;
+      margin-bottom: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    header h1 {
+      font-size: 2em;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #ffccff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+
+    .tags-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      padding: 10px;
+    }
+
+    .tag {
+      background: linear-gradient(145deg, #7e3ff2, #a369f4);
+      padding: 14px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .tag:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .tag::before {
+      content: "#";
+      color: #ffcaff;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+
+      nav {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🔖 Tags</h1>
+    <nav>
+      <a href="Halaman-utama.html">Home</a>
+      <a href="Topics.html">Topics</a>
+      <a href="tags.html">Tags</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </header>
+
+  <section class="tags-container">
+    <div class="tag">Frontend</div>
+    <div class="tag">Backend</div>
+    <div class="tag">JavaScript</div>
+    <div class="tag">Python</div>
+    <div class="tag">PHP</div>
+    <div class="tag">CSS</div>
+    <div class="tag">UIUX</div>
+    <div class="tag">GameDev</div>
+    <div class="tag">Cybersecurity</div>
+    <div class="tag">Linux</div>
+    <div class="tag">Terminal</div>
+    <div class="tag">AI</div>
+    <div class="tag">API</div>
+    <div class="tag">Database</div>
+  </section>
+</body>
+</html>
+

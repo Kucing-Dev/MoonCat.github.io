@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MoonCat - Topics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: radial-gradient(circle at top, #6e35b4, #3d1073);
+      color: white;
+      padding: 20px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 20px 30px;
+      border-radius: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      font-size: 2em;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    nav a {
+      color: #ffccff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+
+    .topics-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .topic-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(5px);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .topic-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .topic-card h3 {
+      font-size: 1.3em;
+      margin-bottom: 10px;
+    }
+
+    .topic-card p {
+      font-size: 0.95em;
+      color: #ddd;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1> Topics</h1>
+    <nav>
+      <a href="Halaman-utama.html">Home</a>
+      <a href="Topics.html">Topics</a>
+      <a href="tags.html">Tags</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </header>
+
+  <section class="topics-container">
+    <div class="topic-card">
+      <h3>🔧 Cara setup project React + Tailwind</h3>
+      <p>Tutorial lengkap cara menggabungkan React dan Tailwind CSS dalam satu project modern.</p>
+    </div>
+
+    <div class="topic-card">
+      <h3>🌐 Mengenal REST API untuk pemula</h3>
+      <p>Penjelasan dasar mengenai konsep dan implementasi REST API di backend development.</p>
+    </div>
+
+    <div class="topic-card">
+      <h3>🛡️ Tips Keamanan Dasar untuk Developer</h3>
+      <p>Langkah-langkah penting untuk menjaga keamanan aplikasi yang kamu buat.</p>
+    </div>
+
+    <div class="topic-card">
+      <h3>🎨 UI Design Minimalis: Prinsip & Inspirasi</h3>
+      <p>Panduan dan contoh desain UI minimalis yang bisa kamu adaptasi di projectmu.</p>
+    </div>
+  </section>
+</body>
+</html>
